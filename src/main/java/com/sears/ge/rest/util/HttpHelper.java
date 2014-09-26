@@ -35,6 +35,10 @@ public class HttpHelper {
     private HttpHelper() {
     }
 
+    public static void setBaseUrl(String url) {
+        baseUrl = url;
+    }
+
     private static CloseableHttpClient getCloseableHttpClient() {
         int timeoutValue = HTTP_TIMEOUT;
         RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(timeoutValue).setConnectTimeout(timeoutValue).build();
@@ -75,7 +79,7 @@ public class HttpHelper {
             HttpEntity entity = new StringEntity(jsonInput);
             postRequest.setEntity(entity);
             try (CloseableHttpResponse closeableHttpResponse = closeableHttpClient.execute(postRequest)) {
-                return convertHTTPResponseToString(closeableHttpResponse);
+                output = convertHTTPResponseToString(closeableHttpResponse);
             }
         } catch (Exception e) {
             logger.error("Exception: " + e.getCause());
@@ -128,7 +132,7 @@ public class HttpHelper {
             }
 
             try (CloseableHttpResponse closeableHttpResponse = closeableHttpClient.execute(getRequest)) {
-                return convertHTTPResponseToString(closeableHttpResponse);
+                output = convertHTTPResponseToString(closeableHttpResponse);
             }
         } catch (Exception e) {
             logger.error("Exception: " + e.getCause());
@@ -165,7 +169,7 @@ public class HttpHelper {
             }
 
             try (CloseableHttpResponse closeableHttpResponse = closeableHttpClient.execute(deleteRequest)) {
-                return convertHTTPResponseToString(closeableHttpResponse);
+                output = convertHTTPResponseToString(closeableHttpResponse);
             }
         } catch (Exception e) {
             logger.error("Exception: " + e.getCause());
@@ -216,7 +220,7 @@ public class HttpHelper {
             }
 
             try (CloseableHttpResponse closeableHttpResponse = closeableHttpClient.execute(putRequest)) {
-                return convertHTTPResponseToString(closeableHttpResponse);
+                output = convertHTTPResponseToString(closeableHttpResponse);
             }
         } catch (Exception e) {
             logger.error("Exception: " + e.getCause());
