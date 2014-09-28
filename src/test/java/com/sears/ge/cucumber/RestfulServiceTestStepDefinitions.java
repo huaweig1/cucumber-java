@@ -12,9 +12,9 @@ import org.slf4j.LoggerFactory;
  *
  * @author Q
  */
-public class RestfulServiceSanityTest {
+public class RestfulServiceTestStepDefinitions {
 
-    private static Logger logger = LoggerFactory.getLogger(RestfulServiceSanityTest.class);
+    private static Logger logger = LoggerFactory.getLogger(RestfulServiceTestStepDefinitions.class);
     private String response;
 
     @Given("^I have a restful client$")

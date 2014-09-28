@@ -10,7 +10,7 @@ import org.junit.Assert;
  *
  * @author Q
  */
-public class CarTest {
+public class CarTestStepDefinitions {
 
     private Car car;
 

@@ -179,7 +179,7 @@ public class HttpHelper {
     }
 
     /**
-     * Perform HTTP Put method with the text
+     * Perform HTTP Put method with the text and file
      *
      * @param path path of RESTful API
      * @param text string content to upload
@@ -191,7 +191,7 @@ public class HttpHelper {
     }
 
     /**
-     * Perform HTTP Put method with the text
+     * Perform HTTP Put method with the text and file
      *
      * @param path path of RESTful API
      * @param headers http headers
