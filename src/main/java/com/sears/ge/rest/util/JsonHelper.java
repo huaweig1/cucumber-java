@@ -36,7 +36,7 @@ public class JsonHelper {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationConfig.Feature.UNWRAP_ROOT_VALUE, unwrapRootValue);
         mapper.configure(DeserializationConfig.Feature.USE_ANNOTATIONS, true);
-        mapper.setSerializationConfig(mapper.getSerializationConfig().withAnnotationIntrospector(getAnnotationIntrospector()));
+        mapper.setDeserializationConfig(mapper.getDeserializationConfig().withAnnotationIntrospector(getAnnotationIntrospector()));
         try {
             return mapper.readValue(jsonInput, type);
         } catch (IOException e) {
